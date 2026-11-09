@@ -1,0 +1,11 @@
+{
+  "name": "الفرنسية ببساطة - Le Français Simple",
+  "short_name": "الفرنسية ببساطة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f5f8fc",
+  "theme_color": "#173d68",
+  "icons": [{"src":"assets/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}

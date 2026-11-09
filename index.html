@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173d68">
+  <meta name="description" content="الفرنسية ببساطة: تعلم الفرنسية بالعربية من خلال دروس ومفردات واختبارات.">
+  <title>الفرنسية ببساطة | Le Français Simple</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="الصفحة الرئيسية">
+      <span class="brand-mark">🇫🇷</span>
+      <span><strong>الفرنسية ببساطة</strong><small>Le Français Simple</small></span>
+    </a>
+    <button id="menuBtn" class="menu-btn" aria-label="القائمة">☰</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">تعلم • تدرب • تقدم</span>
+        <h1>مرحباً بك في<br><em>عالم الفرنسية!</em></h1>
+        <p>تعلم اللغة الفرنسية خطوة بخطوة، بشرح عربي واضح وتمارين ممتعة.</p>
+        <button class="primary" data-go="lessons">ابدأ التعلم <span>←</span></button>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="sun"></div><div class="book">ABC</div><div class="tower">✦</div>
+        <span class="bubble b1">Bonjour!</span><span class="bubble b2">Ça va?</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="تقدمك">
+      <div><strong id="doneCount">0</strong><span>دروس مكتملة</span></div>
+      <div><strong id="pointsCount">0</strong><span>نقطة</span></div>
+      <div><strong id="quizCount">0%</strong><span>نتيجة آخر اختبار</span></div>
+    </section>
+
+    <section id="lessons" class="section">
+      <div class="section-heading"><div><span class="eyebrow">ابدأ من هنا</span><h2>مسارات التعلم</h2></div><span class="section-icon">📚</span></div>
+      <div class="path-grid">
+        <button class="path-card blue" data-go="lesson-list"><span>🔤</span><b>الحروف والنطق</b><small>Alphabet et prononciation</small></button>
+        <button class="path-card green" data-go="vocabulary"><span>💬</span><b>المفردات</b><small>Vocabulaire</small></button>
+        <button class="path-card orange" data-go="grammar"><span>🧩</span><b>القواعد</b><small>Grammaire</small></button>
+        <button class="path-card purple" data-go="conversation"><span>🗣️</span><b>المحادثة</b><small>Conversation</small></button>
+        <button class="path-card teacher-card" data-go="teacher"><span>👨‍🏫</span><b>المعلم الافتراضي</b><small>Professeur virtuel • صوت وكتابة</small></button>
+      </div>
+    </section>
+
+    <section id="lesson-list" class="section panel hidden">
+      <div class="section-heading"><div><span class="eyebrow">الدروس الأولى</span><h2>تعلم الفرنسية</h2></div><button class="text-btn" data-go="lessons">رجوع</button></div>
+      <div id="lessonCards" class="lesson-list"></div>
+    </section>
+
+    <section id="lesson-view" class="section panel hidden">
+      <button class="text-btn" data-go="lesson-list">← كل الدروس</button>
+      <div id="lessonContent"></div>
+    </section>
+
+    <section id="vocabulary" class="section panel hidden">
+      <div class="section-heading"><div><span class="eyebrow">كلمات أساسية</span><h2>المفردات اليومية</h2></div><button class="text-btn" data-go="lessons">رجوع</button></div>
+      <div id="wordList" class="word-list"></div>
+    </section>
+
+    <section id="grammar" class="section panel hidden">
+      <div class="section-heading"><div><span class="eyebrow">قواعد سهلة</span><h2>قاعدة اليوم</h2></div><button class="text-btn" data-go="lessons">رجوع</button></div>
+      <h3>أدوات التعريف: Le / La / Les</h3>
+      <p>في الفرنسية نستخدم أدوات التعريف قبل الاسم:</p>
+      <ul class="examples"><li><b>Le</b> livre = الكتاب (مذكر مفرد)</li><li><b>La</b> maison = المنزل (مؤنث مفرد)</li><li><b>Les</b> livres = الكتب (جمع)</li></ul>
+      <p class="tip">نصيحة: احفظ الاسم مع أداته، وليس وحده.</p>
+    </section>
+
+    <section id="conversation" class="section panel hidden">
+      <div class="section-heading"><div><span class="eyebrow">تحدث بثقة</span><h2>حوار قصير</h2></div><button class="text-btn" data-go="lessons">رجوع</button></div>
+      <div class="dialogue"><p><b>Amine :</b> Bonjour ! Comment tu t'appelles ?</p><small>أمين: مرحباً! ما اسمك؟</small><p><b>Sara :</b> Je m'appelle Sara. Et toi ?</p><small>سارة: اسمي سارة، وأنت؟</small><p><b>Amine :</b> Je m'appelle Amine. Enchanté !</p><small>أمين: اسمي أمين. تشرفت بلقائك!</small></div>
+    </section>
+
+
+    <section id="teacher" class="section panel hidden">
+      <div class="teacher-heading">
+        <div class="teacher-avatar">👨🏻‍🏫</div>
+        <div><span class="eyebrow">معلمك الفرنسي</span><h2>الأستاذ أليكس</h2><small>يساعدك بالعربية والفرنسية</small></div>
+        <span class="online-dot" title="جاهز للمساعدة"></span>
+      </div>
+      <div class="teacher-intro">Bonjour ! أنا الأستاذ أليكس. اكتب سؤالك أو اضغط على الميكروفون لنتعلم معاً.</div>
+      <div id="teacherMessages" class="teacher-messages" aria-live="polite">
+        <div class="chat-msg teacher-msg"><b>الأستاذ أليكس</b><p>Bonjour ! كيف يمكنني مساعدتك اليوم؟ يمكنني شرح كلمة أو قاعدة أو التدرب معك على محادثة قصيرة.</p><button class="speak-btn" data-speak="Bonjour ! كيف يمكنني مساعدتك اليوم؟">🔊 استمع</button></div>
+      </div>
+      <div class="teacher-controls">
+        <input id="teacherInput" type="text" placeholder="اكتب سؤالك بالفرنسية أو العربية..." aria-label="رسالتك للمعلم">
+        <button id="sendTeacher" class="send-btn" aria-label="إرسال">➤</button>
+      </div>
+      <div class="teacher-tools">
+        <button id="micTeacher" class="tool-btn">🎙️ تحدث مع المعلم</button>
+        <button id="clearTeacher" class="tool-btn secondary-tool">مسح المحادثة</button>
+      </div>
+      <p id="voiceStatus" class="voice-status">يمكنك الاستماع إلى الردود أو استخدام الميكروفون إذا كان متصفحك يدعم التعرف على الكلام.</p>
+      <div class="tip">ملاحظة: هذه نسخة أولية من المعلم، بردود تعليمية مبرمجة. سنربطه لاحقاً بذكاء اصطناعي حقيقي ليجيب عن أسئلة متنوعة.</div>
+    </section>
+
+    <section id="quiz" class="section panel">
+      <div class="section-heading"><div><span class="eyebrow">اختبر نفسك</span><h2>اختبار سريع</h2></div><span class="section-icon">🏆</span></div>
+      <div id="quizArea">
+        <p class="muted">اختر الإجابة الصحيحة. لديك 3 أسئلة قصيرة.</p>
+        <div id="questionBox"></div>
+        <div class="quiz-actions"><span id="quizProgress">السؤال 1 من 3</span><button id="nextQuestion" class="primary" disabled>التالي</button></div>
+      </div>
+      <div id="quizResult" class="hidden"></div>
+    </section>
+  </main>
+
+  <footer><strong>الفرنسية ببساطة</strong><span>خطوتك الصغيرة اليوم تصنع فرقاً غداً 🇫🇷</span><small>نسخة أولية قابلة للتطوير</small></footer>
+  <nav class="bottom-nav">
+    <button data-go="lessons"><span>⌂</span>الرئيسية</button>
+    <button data-go="lesson-list"><span>📖</span>الدروس</button>
+    <button data-go="vocabulary"><span>📝</span>المفردات</button>
+    <button data-go="quiz"><span>🏆</span>اختبار</button>
+    <button data-go="teacher"><span>👨‍🏫</span>المعلم</button>
+  </nav>
+  <script src="app.js"></script>
+  <script>if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js').catch(()=>{});</script>
+</body>
+</html>
